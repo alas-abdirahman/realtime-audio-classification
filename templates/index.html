@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Classification using MediaPipe</title>
+  
+  <!-- Material Components Web CSS -->
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="{% static 'css/mystyle.css' %}" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      text-align: center;
+    }
+    section#demos {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #555;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: #777;
+    }
+    button.mdc-button.mdc-button--raised {
+      background-color: #6200ee;
+      color: white;
+      width: 100%;
+      margin: 20px 0;
+    }
+    button.mdc-button.mdc-button--raised:hover {
+      background-color: #3700b3;
+    }
+    p#microResult {
+      font-size: 1rem;
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Audio Classification using the MediaPipe Audio Classifier Task for Web</h1>
+  <section id="demos" class="invisible">
+    <h3>This demo uses the MediaPipe Audio Classifier Task to list the top classes in the given audio sample.</h3>
+    <br>
+    <div style="top: 30px; position: relative; clear: both;">
+      <h2>Stream Audio Classifications</h2>
+      <div>Click <b>Start Classifying</b> to start streaming classifications of your own audio.</div>
+      <button class="mdc-button mdc-button--raised" id="microBt">
+        <span class="mdc-button__label">START CLASSIFYING</span>
+      </button>
+      <p id="microResult"></p>
+    </div>
+  </section>
+
+  <!-- Material Components Web JS -->
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script type="module" src="{% static 'js/myjs.js' %}"></script>
+</body>
+</html>
